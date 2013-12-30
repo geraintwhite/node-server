@@ -1,5 +1,5 @@
 var url = require('url');
-var port = 8080;
+var port = 1337;
 
 exports.start = function (route) {
     require('http')
