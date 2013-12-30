@@ -1,5 +1,13 @@
+var templates = require('../templates')
+
 function result (cb) {
-    cb('The time is ' + new Date().toLocaleTimeString());
+	templates.template(
+		{'title': 'Time', 
+		 'time': 'The time is ' + new Date().toLocaleTimeString()
+		},
+		'time.html', 
+		cb
+	)
 }
 
 exports.result = result;

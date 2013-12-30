@@ -10,7 +10,7 @@ function route (path, cb) {
 
         case '/users':
             require('./pages/users').result(cb);
-            break
+            break;
 
         default:
             require('./pages/404').result(cb);
