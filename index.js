@@ -1,1 +1,4 @@
-require('./server').start(require('./router').route);
+require('./server')
+	.start(
+		require('./router').route
+	);
