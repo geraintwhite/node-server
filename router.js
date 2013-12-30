@@ -1,26 +1,21 @@
-exports.route = function (path, cb) {
+function route (path, cb) {
     switch (path) {
         case '/':
-            cb('Welcome to my little test');
+            require('./pages/index').result(cb);
             break;
 
         case '/time':
-            cb('The time is ' + new Date().toLocaleTimeString());
+            require('./pages/time').result(cb);
             break;
 
         case '/users':
-            require('./mysql')
-                .query('SELECT * FROM users', function (err, rows, fields) {
-                    if (err) {
-                        cb(err.toString());
-                    } else {
-                        cb(JSON.stringify(rows));
-                    }
-                });
+            require('./pages/users').result(cb);
             break
 
         default:
-            cb('Unable to locate the requested page');
+            require('./pages/404').result(cb);
     }
     return;
 }
+
+exports.route = route;
