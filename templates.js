@@ -5,17 +5,16 @@ function template (data, template, cb) {
 		cb(
 			html.replace(/{([^}]+)}/g, function (match) {
 
-				match = match.substring(1, match.length-1)
+				match = match.substring(1, match.length-1);
 
 				if (data[match] != undefined) {
-					return data[match]
+					return data[match];
 				} else {
-					return
+					return '{'+match+'}';
 				}
-
 			})
-		)
-	})
+		);
+	});
 }
 
 exports.template = template;

@@ -1,13 +1,15 @@
-var templates = require('../templates')
+var templates = require('../templates');
+var htmlutils = require('../htmlutils');
 
 function result (cb) {
 	templates.template(
-		{'title': 'Time', 
-		 'time': 'The time is ' + new Date().toLocaleTimeString()
+		{'title': 'Time',
+		 'heading': 'Time',
+		 'content': htmlutils.wrap('The time is ' + new Date().toLocaleTimeString(), 'p')
 		},
-		'time.html', 
+		'default.html', 
 		cb
-	)
+	);
 }
 
 exports.result = result;
