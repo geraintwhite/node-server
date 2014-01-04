@@ -7,7 +7,7 @@ function result (cb) {
             cb(err.toString());
         } else {
 			html = JSON.stringify(rows);
-            templates.template(html, 'usertable.html', cb);
+            templates.template(html, 'default.html', cb);
         }
     });
 }
