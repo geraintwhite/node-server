@@ -5,6 +5,9 @@ var port = 1337;
 function start (route) {
     http.createServer(function (req, res) {
         var path = url.parse(req.url).pathname;
+        path = path.replace(/^\/+/, '/'); // Replace duplicate slashes
+        if (path != '/') path = path.replace(/\/+$/, ''); // Remove trailing slash
+        
         if (path != '/favicon.ico') {
             console.log('Request for ' + path + ' received');
 
