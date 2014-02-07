@@ -1,6 +1,6 @@
 var http = require('http');
 var url = require('url');
-var port = 1337;
+var port = 6001;
 
 function start (route) {
     http.createServer(function (req, res) {
